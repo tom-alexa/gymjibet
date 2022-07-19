@@ -5,7 +5,7 @@ import SignUp from '../views/authentication/SignUp.vue'
 const routes = [
     {
         path: "/",
-        redirect: "/login"
+        redirect: "/global/competitions"
     },
     {
         path: "/login",
