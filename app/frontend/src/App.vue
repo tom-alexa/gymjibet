@@ -1,14 +1,11 @@
-    
 <script setup>
-import { ref } from 'vue'
-import Navbar from './views/Navbar.vue'
-import Footer from './views/Footer.vue'
+import Navbar from './components/Navbar.vue'
+import Footer from './components/Footer.vue'
 
 
 </script>
 
 <template>
-
   <header>
     <Navbar />
   </header>

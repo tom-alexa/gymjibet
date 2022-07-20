@@ -1,3 +1,9 @@
+<script setup>
+const itemContainers = "my-2 mx-3"
+const inputClasses = "mx-2"
+
+</script>
+
 <template>
     <div class="bg-secondary">
         <div class="container py-5">
@@ -28,9 +34,3 @@
         </div>
     </div>
 </template>
-
-<script setup>
-const itemContainers = "my-2 mx-3"
-const inputClasses = "mx-2"
-
-</script>

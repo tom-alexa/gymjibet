@@ -1,3 +1,7 @@
+<script setup>
+
+</script>
+
 <template>
     <div class="bg-dark">
         <div class="container text-center text-light fs-4 py-3">
@@ -7,7 +11,3 @@
         </div>
     </div>
 </template>
-
-<script setup>
-
-</script>
