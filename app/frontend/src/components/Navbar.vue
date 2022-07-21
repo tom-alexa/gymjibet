@@ -1,74 +1,30 @@
 <script setup>
-import { ref, watch } from 'vue';
-import router from '../router'
+import { ref } from 'vue';
+
+const props = defineProps(["active"])  // props sended from template
 
 
-const updateNavbar = () => {
-
-  var back = r.value.options.history.state.back;
-  var current = r.value.options.history.state.current;
-
-  back = back.split("/")
-  current = current.split("/")
-
-  if (current[1] === "login") {
-    active.value = "login";
-  }
-  else if (current[1] === "signup") {
-    active.value = "signUp";
-  }
-  else if (current[1] === "profile") {
-    active.value = "profile"
-  }
-  else if (current[1] === "my") {
-    if (current[2] === "competitions") {
-      active.value = "myCompetitions";
-    }
-    else if (current[2] === "bets") {
-      active.value = "myBets";
-    }
-  }
-  else if (current[1] === "create") {
-    active.value = "create"
-  }
-  else {
-    active.value = ""
-  }
-
-  pages.value.login = isActive("login")
-  pages.value.signUp = isActive("signUp")
-  pages.value.profile = isActive("profile")
-  pages.value.global = isActive("global")
-  pages.value.myCompetition = isActive("myCompetitions")
-  pages.value.myBets = isActive("myBets")
-  pages.value.create = isActive("create")
-
-}
-
+// each navbar link gets boolean value if is active
 const isActive = (name) => {
-  if (name === active.value) {
+  if (name === props.active) {
     return true;
   };
   return false;
 }
 
-const active = ref(String)
+// define navbar link values
 const pages = ref({
-  login: false,
-  signUp: false,
-  profile: false,
-  global: false,
-  myCompetition: false,
-  myBets: false,
-  create: false,
+  login: isActive("login"),
+  signUp: isActive("signUp"),
+  profile: isActive("profile"),
+  global: isActive("global"),
+  myCompetitions: isActive("myCompetitions"),
+  myBets: isActive("myBets"),
+  create: isActive("create"),
 });
 
-const r = ref(router)
-updateNavbar()
-watch(r.value, updateNavbar)
 
-
-const styleActive = "link-light"
+const styleActive = "link-warning border-bottom border-2"  // style for active navbar link
 
 </script>
 
@@ -85,7 +41,7 @@ const styleActive = "link-light"
             <router-link to="/global/competitions" class="navbar-brand" :class="[pages.global ? styleActive : '']">
               Global
             </router-link>
-            <router-link to="/my/competitions" class="navbar-brand" :class="[pages.myCompetition ? styleActive : '']">
+            <router-link to="/my/competitions" class="navbar-brand" :class="[pages.myCompetitions ? styleActive : '']">
               My competitions
             </router-link>
             <router-link to="/my/bets" class="navbar-brand" :class="[pages.myBets ? styleActive : '']">

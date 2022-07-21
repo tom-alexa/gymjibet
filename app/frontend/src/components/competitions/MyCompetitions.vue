@@ -6,7 +6,7 @@ import Footer from '../Footer.vue';
 
 <template>
     <header>
-        <Navbar active="create" />
+        <Navbar />
     </header>
     <main>
 

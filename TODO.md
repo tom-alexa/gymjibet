@@ -12,8 +12,14 @@
     - Team
     - Admin of
     - Create competition
+    - Global competitions
+        - Loading...
+        - No competitions
 
 - **authentication**
+
+- **Fetch Data**
+    - Global competitions
 
 ## Backend
 

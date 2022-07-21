@@ -2,8 +2,10 @@ import { createRouter, createWebHistory } from "vue-router"
 import NotFound from '../components/NotFound.vue'
 import Login from '../components/authentication/Login.vue'
 import SignUp from '../components/authentication/SignUp.vue'
-import CreateCompetition from '../components/competitions/CreateCompetition.vue'
 import Profile from '../components/Profile.vue'
+import Competition from '../components/competitions/Competition.vue'
+import GlobalCompetitions from '../components/competitions/GlobalCompetitions.vue'
+import MyCompetitions from '../components/competitions/MyCompetitions.vue'
 
 const routes = [
     {
@@ -12,12 +14,12 @@ const routes = [
     },
     {
         path: "/login",
-        name: "Login",
+        name: "login",
         component: Login
     },
     {
         path: "/signup",
-        name: "SignUp",
+        name: "signUp",
         component: SignUp
     },
     {
@@ -26,7 +28,8 @@ const routes = [
     },
     {
         path: "/global/competitions",
-        redirect: "/404"                    // TODO
+        name: "globalCompetition",
+        component: GlobalCompetitions
     },
     {
         path: "/my",
@@ -34,16 +37,29 @@ const routes = [
     },
     {
         path: "/my/competitions",
-        redirect: "/"                       // TODO
+        name: "myCompetitions",             // TODO
+        component: MyCompetitions
     },
     {
         path: "/my/bets",
-        name: "MyBets",                     // TODO
+        name: "myBets",                     // TODO
         component: NotFound
     },
     {
         path: "/competition",
-        redirect: "/global/competition"
+        redirect: "/global/competitions"
+    },
+    {
+        path: "/competitions",
+        redirect: "/global/competitions"
+    },
+    {
+        path: "/competition/:username"      // TODO
+    },
+    {
+        path: "/competition/:username/:competitionSlug",   // TODO
+        name: "competition",
+        component: Competition
     },
     {
         path: "/create",
@@ -51,8 +67,8 @@ const routes = [
     },
     {
         path: "/create/competition",
-        name: "CreateCompetition",
-        component: CreateCompetition
+        name: "createCompetition",
+        component: NotFound
     },
     {
         path: "/profile",
@@ -60,12 +76,21 @@ const routes = [
     },
     {
         path: "/profile/:username",         // TODO
-        name: "Profile",
+        name: "profile",
         component: Profile
     },
     {
+        path: "/admin-of",
+        redirect: "/admin-of/competitions"
+    },
+    {
+        path: "/admin-of/competitions",
+        name: "adminOfCompetitions",
+        component: GlobalCompetitions       // TODO
+    },
+    {
         path: '/:pathMatch(.*)*',
-        name: "NotFound",
+        name: "notFound",
         component: NotFound
     }
 ]
