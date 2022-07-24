@@ -32,6 +32,17 @@ const getFrom = () => {
 const activePage = getFrom()
 
 
+// TODO
+    // if no active page,
+        // check if is in my competitions,
+            // if not check if is in global,
+                // if not, competition doesn't exist
+
+            // if so, render in my competitions
+
+    // if so, render competition in that section
+
+
 </script>
 
 <template>
@@ -41,21 +52,21 @@ const activePage = getFrom()
     <main>
         <div class="bg-secondary">
             <div class="container">
-                <div class="d-flex justify-content-between flex-wrap p-5">
+                <div class="d-flex justify-content-between flex-wraps p-4">
                     <div class="flex-fill">
                         <div class="d-flex flex-wrap">
-                            <div class="flex-item">
+                            <div class="">
                                 <SelectSport />
                             </div>
-                            <div class="flex-item">
+                            <div class="">
                                 <SelectCompetition />
                             </div>
                         </div>
                     </div>
-                    <div class="flex-item">
+                    <div class="">
                         <YearAndLogo />
                     </div>
-                    <div class="flex-item flex-fill">
+                    <div class="flex-fill">
                         <Table />
                     </div>
                 </div>

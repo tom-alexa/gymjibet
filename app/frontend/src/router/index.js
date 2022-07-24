@@ -57,7 +57,7 @@ const routes = [
         path: "/competition/:username"      // TODO
     },
     {
-        path: "/competition/:username/:competitionSlug",   // TODO
+        path: "/competition/:username/:competitionSlug",
         name: "competition",
         component: Competition
     },

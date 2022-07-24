@@ -7,7 +7,7 @@ import Footer from '../Footer.vue';
 const URL = ""
 
 
-const globalCompetitionsFromApi = {
+const globalCompetitionFromApi = {
     success: true,
     competition: {
         name: "EURO 2020",
@@ -36,7 +36,7 @@ const redirectToCompetition = (data) => {
 const fetchData = async () => {
     // const response = await fetch(URL)
     // return response.json()
-    return globalCompetitionsFromApi
+    return globalCompetitionFromApi
 }
 
 fetchData().then((data) => { redirectToCompetition(data) })
