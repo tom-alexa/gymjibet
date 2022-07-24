@@ -15,6 +15,15 @@ const getFrom = () => {
     const backRoute = router.options.history.state.back
     if (!backRoute) {
         return ""
+        // TODO
+        // if no active page,
+        // check if is in my competitions,
+        // if not check if is in global,
+        // if not, competition doesn't exist
+
+        // if so, render in my competitions
+
+        // if so, render competition in that section
     }
     const from = backRoute.split("/")
     if (from[1] === "global") {
@@ -30,17 +39,6 @@ const getFrom = () => {
     return ""
 }
 const activePage = getFrom()
-
-
-// TODO
-    // if no active page,
-        // check if is in my competitions,
-            // if not check if is in global,
-                // if not, competition doesn't exist
-
-            // if so, render in my competitions
-
-    // if so, render competition in that section
 
 
 </script>

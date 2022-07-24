@@ -16,8 +16,6 @@
     - Not Found
     - Profile
     - Competition
-        - Sport
-        - Competition
         - Table
         - Play off
         - Year and Logo
@@ -29,6 +27,11 @@
     - Global competitions
         - Loading...
         - No competitions
+
+- **functionality**
+    - Competition
+        - Sport
+        - Competition
 
 - **authentication**
 
